@@ -15,7 +15,7 @@ using Autodesk.AutoCAD.Runtime;
 using Autodesk.AutoCAD.Geometry;
 using Autodesk.AutoCAD.Windows;
 using System.Diagnostics;
-using Microsoft.WindowsAPICodePack.Shell;
+//using Microsoft.WindowsAPICodePack.Shell;
 
 using DwgLib.Dialog;
 

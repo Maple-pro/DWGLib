@@ -16,7 +16,7 @@ using Autodesk.AutoCAD.Runtime;
 using Autodesk.AutoCAD.Geometry;
 using Autodesk.AutoCAD.Windows;
 using System.Diagnostics;
-using Microsoft.WindowsAPICodePack.Shell;
+//using Microsoft.WindowsAPICodePack.Shell;
 
 using DwgLib;
 using DwgLib.Class;
@@ -30,6 +30,7 @@ using DwgLib.Controls;
 */
 namespace DwgLib.Command
 {
+    using DWGLib.Properties;
     public static class DwgPalette
     {
         public static PaletteSet PaletteLibrary;
@@ -56,7 +57,7 @@ namespace DwgLib.Command
         public static void ShowAbout()
         {
             AboutDlg AboutDlg = new AboutDlg();
-            AboutDlg.Icon = Properties.Resources.logo;
+            AboutDlg.Icon = Resources.logo;
             AboutDlg.ShowDialog();
         }
     }
@@ -69,7 +70,7 @@ namespace DwgLib.Command
             Setting settingControl = new Setting();
             form.MaximumSize = new Size(360, 600);
             form.MinimumSize = new Size(200, 550);
-            form.Icon = Properties.Resources.logo;
+            form.Icon = Resources.logo;
             settingControl.Dock = DockStyle.Fill;
             form.Controls.Add(settingControl);
             form.ShowDialog();

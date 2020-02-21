@@ -17,13 +17,14 @@ using Autodesk.AutoCAD.Runtime;
 using Autodesk.AutoCAD.Geometry;
 using Autodesk.AutoCAD.Windows;
 using System.Diagnostics;
-using Microsoft.WindowsAPICodePack.Shell;
+//using Microsoft.WindowsAPICodePack.Shell;
 
 using DwgLib;
 using DwgLib.Controls;
 using DwgLib.Dialog;
 namespace DwgLib.Class
 {
+    using DWGLib.Properties;
     class _Palette
     {
         public PaletteSet PaletteLibrary;
@@ -32,7 +33,7 @@ namespace DwgLib.Class
             this.PaletteLibrary = new PaletteSet("中建深圳装饰", Guid.NewGuid());
             this.PaletteLibrary.Size = new Size(600, 600);
             this.PaletteLibrary.MinimumSize = new Size(260, 400);
-            this.PaletteLibrary.Icon = DwgLib.Properties.Resources.logo;
+            this.PaletteLibrary.Icon = Resources.logo;
             InitLibrary(this.PaletteLibrary);
         }
         private static void InitLibrary(PaletteSet myPaletteSet)
@@ -156,6 +157,7 @@ namespace DwgLib.Class
             libraryPath = Path.GetFullPath(libraryPath);
             if (!Directory.Exists(libraryPath))
             {
+                MessageBox.Show(libraryPath, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return "";
             }
             else
